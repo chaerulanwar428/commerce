@@ -1,4 +1,6 @@
 function Arrived(){
+  
+
     return(
         <section className="flex flex-col py-16">
       <div className="container mx-auto mb-4">

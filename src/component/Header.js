@@ -4,10 +4,7 @@ function Header(){
       <div className="container mx-auto py-5">
         <div className="flex flex-stretch items-center">
           <div className="w-56 items-center flex">
-            <img
-              src="images/content/logo.png"
-              alt="Luxspace | Fulfill your house with beautiful furniture"
-            />
+            <div className="text-3xl whitespace-nowrap font-bold">Furniture Angkasa</div>
           </div>
           <div className="w-full"></div>
           <div className="w-auto">
