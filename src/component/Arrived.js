@@ -224,7 +224,7 @@ function Arrived(){
                 alt=""
                 className="w-full h-full object-cover object-center" />
             </div>
-            <h5 className="text-lg font-semibold mt-4">Coffe Liong</h5>
+            <h5 className="text-lg font-semibold mt-4">Coffee Liong</h5>
             <span className="">IDR 3.000</span>
             <a href="#details.html" className="stretched-link">
             </a>
