@@ -1,6 +1,16 @@
-function Header(){
-    return(
-         <header className="absolute w-full z-50 px-4">
+import { useState } from 'react';
+
+function Header() {
+  // State untuk melacak apakah menu terbuka atau tidak
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Fungsi untuk toggle menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <header className="absolute w-full z-50 px-4">
       <div className="container mx-auto py-5">
         <div className="flex flex-stretch items-center">
           <div className="w-56 items-center flex">
@@ -9,28 +19,22 @@ function Header(){
           <div className="w-full"></div>
           <div className="w-auto">
             <ul
-              className="fixed bg-white inset-0 flex flex-col invisible items-center justify-center opacity-0 md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center"
+              className={`fixed bg-white inset-0 flex flex-col items-center justify-center transition-all duration-300 ease-in-out transform ${
+                isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-full'
+              } md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:translate-y-0`}
               id="menu"
             >
               <li className="mx-3 py-6 md:py-0">
-                <a href="/" className="text-black md:text-white hover:underline"
-                  >Showcase</a
-                >
+                <a href="/" className="text-black md:text-white hover:underline">Showcase</a>
               </li>
               <li className="mx-3 py-6 md:py-0">
-                <a href="/" className="text-black md:text-white hover:underline"
-                  >Catalog</a
-                >
+                <a href="/" className="text-black md:text-white hover:underline">Catalog</a>
               </li>
               <li className="mx-3 py-6 md:py-0">
-                <a href="/" className="text-black md:text-white hover:underline"
-                  >Delivery</a
-                >
+                <a href="/" className="text-black md:text-white hover:underline">Delivery</a>
               </li>
               <li className="mx-3 py-6 md:py-0">
-                <a href="/" className="text-black md:text-white hover:underline"
-                  >Rewards</a
-                >
+                <a href="/" className="text-black md:text-white hover:underline">Rewards</a>
               </li>
             </ul>
           </div>
@@ -40,6 +44,7 @@ function Header(){
                 <button
                   id="menu-toggler"
                   className="relative flex z-50 items-center justify-center w-8 h-8 text-black md:text-white focus:outline-none"
+                  onClick={toggleMenu}
                 >
                   <svg
                     className="fill-current"
@@ -94,8 +99,7 @@ function Header(){
         </div>
       </div>
     </header>
-    )
+  );
 }
-
 
 export default Header;
